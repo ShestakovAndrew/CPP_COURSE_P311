@@ -13,9 +13,9 @@ int main()
 	std::cout << "Введите строку: ";
 	std::cin.getline(input, SIZE_ARRAY);
 
-	std::cout << "Введите начальную позицию m (нумерация с 1): ";
+	std::cout << "Введите начальную позицию m: ";
 	std::cin >> m;
-	std::cout << "Введите конечную позицию n (нумерация с 1): ";
+	std::cout << "Введите конечную позицию n: ";
 	std::cin >> n;
 
 	if (m < 1 || n > strlen(input) || m > n)
