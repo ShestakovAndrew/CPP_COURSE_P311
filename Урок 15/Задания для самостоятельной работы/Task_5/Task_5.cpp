@@ -9,33 +9,33 @@
 const size_t MAX_ROWS = 10;
 const size_t MAX_COLS = 5;
 
-// Функция для заполнения массива случайными числами
-void FillArray(int** arr, size_t rows, size_t cols)
+// Функция для заполнения матрицы случайными числами
+void FillMatrix(int** matrix, size_t rows, size_t cols)
 {
 	for (size_t i = 0; i < rows; ++i)
 	{
 		for (size_t j = 0; j < cols; ++j)
 		{
-			arr[i][j] = rand() % 10;
+			matrix[i][j] = rand() % 10;
 		}
 	}
 }
 
-// Функция для печати массива
-void PrintArray(int** arr, size_t rows, size_t cols)
+// Функция для печати матрицы
+void PrintMatrix(int** matrix, size_t rows, size_t cols)
 {
 	for (size_t i = 0; i < rows; ++i)
 	{
 		for (size_t j = 0; j < cols; ++j)
 		{
-			std::cout << arr[i][j] << " ";
+			std::cout << matrix[i][j] << " ";
 		}
 		std::cout << std::endl;
 	}
 }
 
 // Функция для удаления строк с нулями
-size_t RemoveZeroRows(int**& arr, size_t rows, size_t cols)
+size_t RemoveZeroRows(int**& matrix, size_t rows, size_t cols)
 {
 	size_t countNonZeroRows = 0;
 	for (size_t i = 0; i < rows; ++i)
@@ -43,7 +43,7 @@ size_t RemoveZeroRows(int**& arr, size_t rows, size_t cols)
 		bool hasZero = false;
 		for (size_t j = 0; j < cols; ++j)
 		{
-			if (arr[i][j] == 0)
+			if (matrix[i][j] == 0)
 			{
 				hasZero = true;
 				break;
@@ -55,7 +55,7 @@ size_t RemoveZeroRows(int**& arr, size_t rows, size_t cols)
 			{
 				for (size_t k = 0; k < cols; ++k)
 				{
-					arr[countNonZeroRows][k] = arr[i][k];
+					matrix[countNonZeroRows][k] = matrix[i][k];
 				}
 			}
 			countNonZeroRows++;
@@ -67,7 +67,7 @@ size_t RemoveZeroRows(int**& arr, size_t rows, size_t cols)
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	srand(static_cast<unsigned int>(time(NULL)));
+	srand((unsigned int)time(0));
 
 	// Выделение памяти
 	int** arr = new int* [MAX_ROWS];
@@ -77,16 +77,16 @@ int main()
 	}
 
 	// Заполнение массива
-	FillArray(arr, MAX_ROWS, MAX_COLS);
+	FillMatrix(arr, MAX_ROWS, MAX_COLS);
 
 	std::cout << "Исходный массив: " << std::endl;
-	PrintArray(arr, MAX_ROWS, MAX_COLS);
+	PrintMatrix(arr, MAX_ROWS, MAX_COLS);
 
 	// Удаление строк и получение нового количества строк
 	size_t rows = RemoveZeroRows(arr, MAX_ROWS, MAX_COLS);
 
 	std::cout << "Массив после удаления строк с нулями: " << std::endl;
-	PrintArray(arr, rows, MAX_COLS);
+	PrintMatrix(arr, rows, MAX_COLS);
 
 	// Освобождение памяти
 	for (size_t i = 0; i < MAX_ROWS; ++i)
