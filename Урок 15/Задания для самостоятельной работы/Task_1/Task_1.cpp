@@ -1,18 +1,16 @@
 ﻿#include <iostream>
-#include <cstdlib>
 #include <ctime>
 
-//Задание 1. Написать программу, которая удаляет из
-//двухмерного массива, заполненного случайными числами
-//строки, содержащие нулевые элементы.
+//Написать функцию, добавляющую строку
+//двухмерному массиву в конец.
 
-const size_t MAX_ROWS = 10;
-const size_t MAX_COLS = 5;
+const size_t MAX_ROWS = 2;
+const size_t MAX_COLS = 3;
 
 // Функция для заполнения массива случайными числами
 void FillArray(int** arr, size_t rows, size_t cols)
 {
-	for (size_t i = 0; i < rows; ++i) 
+	for (size_t i = 0; i < rows; ++i)
 	{
 		for (size_t j = 0; j < cols; ++j)
 		{
@@ -34,34 +32,40 @@ void PrintArray(int** arr, size_t rows, size_t cols)
 	}
 }
 
-// Функция для удаления строк с нулями
-size_t RemoveZeroRows(int**& arr, size_t rows, size_t cols)
+// Функция добавления строки в конец двумерного массива
+size_t AddRow(int**& arr, size_t rows, size_t cols, const int* newRowValues)
 {
-	size_t countNonZeroRows = 0;
+	// Создаем новый массив с размером на одну строку больше
+	int** newArr = new int* [rows + 1];
+
+	// Копируем существующие строки в новый массив
 	for (size_t i = 0; i < rows; ++i)
 	{
-		bool hasZero = false;
+		newArr[i] = new int[cols];
 		for (size_t j = 0; j < cols; ++j)
 		{
-			if (arr[i][j] == 0) 
-			{
-				hasZero = true;
-				break;
-			}
-		}
-		if (!hasZero) 
-		{
-			if (countNonZeroRows != i) 
-			{
-				for (size_t k = 0; k < cols; ++k) 
-				{
-					arr[countNonZeroRows][k] = arr[i][k];
-				}
-			}
-			countNonZeroRows++;
+			newArr[i][j] = arr[i][j];
 		}
 	}
-	return countNonZeroRows;
+
+	// Добавляем новую строку в конец нового массива
+	newArr[rows] = new int[cols];
+	for (size_t j = 0; j < cols; ++j) 
+	{
+		newArr[rows][j] = newRowValues[j];
+	}
+
+	// Удаляем старый массив
+	for (size_t i = 0; i < rows; ++i)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
+
+	// Обновляем указатель на массив
+	arr = newArr;
+
+	return ++rows;
 }
 
 int main() 
@@ -71,7 +75,7 @@ int main()
 
 	// Выделение памяти
 	int** arr = new int* [MAX_ROWS];
-	for (size_t i = 0; i < MAX_ROWS; ++i) 
+	for (size_t i = 0; i < MAX_ROWS; ++i)
 	{
 		arr[i] = new int[MAX_COLS];
 	}
@@ -82,14 +86,17 @@ int main()
 	std::cout << "Исходный массив: " << std::endl;
 	PrintArray(arr, MAX_ROWS, MAX_COLS);
 
-	// Удаление строк и получение нового количества строк
-	size_t rows = RemoveZeroRows(arr, MAX_ROWS, MAX_COLS);
+	// Значения для новой строки
+	int newRowValues[MAX_COLS] = { 1, 1, 1 };
 
-	std::cout << "Массив после удаления строк с нулями: " << std::endl;
-	PrintArray(arr, rows, MAX_COLS);
+	// Добавляем новую строку в массив
+	size_t newRows = AddRow(arr, MAX_ROWS, MAX_COLS, newRowValues);
 
-	// Освобождение памяти
-	for (size_t i = 0; i < MAX_ROWS; ++i) 
+	std::cout << "Массив после добавления строки: " << std::endl;
+	PrintArray(arr, newRows, MAX_COLS);
+
+	// Освобождаем память
+	for (size_t i = 0; i < newRows; ++i)
 	{
 		delete[] arr[i];
 	}
