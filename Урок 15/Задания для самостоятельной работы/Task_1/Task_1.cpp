@@ -33,7 +33,7 @@ void PrintArray(int** arr, size_t rows, size_t cols)
 }
 
 // Функция добавления строки в конец двумерного массива
-size_t AddRow(int**& arr, size_t rows, size_t cols, const int* newRowValues)
+size_t AddRowToBack(int**& arr, size_t rows, size_t cols, const int* newRowValues)
 {
 	// Создаем новый массив с размером на одну строку больше
 	int** newArr = new int* [rows + 1];
@@ -90,7 +90,7 @@ int main()
 	int newRowValues[MAX_COLS] = { 1, 1, 1 };
 
 	// Добавляем новую строку в массив
-	size_t newRows = AddRow(arr, MAX_ROWS, MAX_COLS, newRowValues);
+	size_t newRows = AddRowToBack(arr, MAX_ROWS, MAX_COLS, newRowValues);
 
 	std::cout << "Массив после добавления строки: " << std::endl;
 	PrintArray(arr, newRows, MAX_COLS);
