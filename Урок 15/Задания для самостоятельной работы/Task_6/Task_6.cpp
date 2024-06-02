@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-#include <cstdlib>
 #include <ctime>
 
 // Функция для создания и заполнения двумерного массива случайными числами

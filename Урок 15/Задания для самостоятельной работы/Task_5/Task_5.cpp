@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-#include <cstdlib>
 #include <ctime>
 
 //Написать программу, которая удаляет из
