@@ -16,7 +16,7 @@ void FillArray(int** arr, size_t rows, size_t cols)
 	{
 		for (size_t j = 0; j < cols; ++j)
 		{
-			arr[i][j] = rand() % 10; // Для примера, числа от 0 до 9
+			arr[i][j] = rand() % 10;
 		}
 	}
 }
