@@ -7,7 +7,7 @@
 const size_t MAX_ROWS = 2;
 const size_t MAX_COLS = 3;
 
-// Функция для заполнения массива случайными числами
+// Функция для заполнения матрицы случайными числами
 void FillMatrix(int** matrix, size_t rows, size_t cols)
 {
 	for (size_t i = 0; i < rows; ++i)
@@ -19,7 +19,7 @@ void FillMatrix(int** matrix, size_t rows, size_t cols)
 	}
 }
 
-// Функция для печати массива
+// Функция для печати матрицы
 void PrintMatrix(int** matrix, size_t rows, size_t cols)
 {
 	for (size_t i = 0; i < rows; ++i)
