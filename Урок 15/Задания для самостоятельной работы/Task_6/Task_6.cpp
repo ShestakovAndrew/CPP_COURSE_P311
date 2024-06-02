@@ -1,20 +1,86 @@
-﻿// Task_6.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-#include <iostream>
-
-int main()
+// Функция для создания и заполнения двумерного массива случайными числами
+int** CreateAndFillMatrix(size_t rows, size_t cols)
 {
-    std::cout << "Hello World!\n";
+	int** arr = new int* [rows];
+	for (size_t i = 0; i < rows; ++i)
+	{
+		arr[i] = new int[cols];
+		for (size_t j = 0; j < cols; ++j)
+		{
+			arr[i][j] = rand() % 10;
+		}
+	}
+	return arr;
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
+// Функция для печати матрицы
+void PrintMatrix(int** matrix, size_t rows, size_t cols)
+{
+	for (size_t i = 0; i < rows; ++i)
+	{
+		for (size_t j = 0; j < cols; ++j)
+		{
+			std::cout << matrix[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+}
 
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
+// Функция для суммирования двух двумерных массивов (матриц)
+int** SumMatrix(int** matrix1, int** matrix2, size_t rows, size_t cols)
+{
+	int** resultMatrix = new int* [rows];
+	for (size_t i = 0; i < rows; ++i)
+	{
+		resultMatrix[i] = new int[cols];
+		for (size_t j = 0; j < cols; ++j) 
+		{
+			resultMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
+		}
+	}
+	return resultMatrix;
+}
+
+int main() 
+{
+	setlocale(LC_ALL, "rus");
+	srand((unsigned int)time(0)); // Инициализация генератора случайных чисел
+
+	size_t rows, cols;
+	std::cout << "Введите количество строк: ";
+	std::cin >> rows;
+	std::cout << "Введите количество столбцов: ";
+	std::cin >> cols;
+
+	// Создание и заполнение первой матрицы
+	int** arr1 = CreateAndFillMatrix(rows, cols);
+	std::cout << "Первая матрица:" << std::endl;
+	PrintMatrix(arr1, rows, cols);
+
+	// Создание и заполнение второй матрицы
+	int** arr2 = CreateAndFillMatrix(rows, cols);
+	std::cout << "Вторая матрица:" << std::endl;
+	PrintMatrix(arr2, rows, cols);
+
+	// Суммирование массивов
+	int** sumMatrix = SumMatrix(arr1, arr2, rows, cols);
+	std::cout << "Сумма матриц:" << std::endl;
+	PrintMatrix(sumMatrix, rows, cols);
+
+	// Освобождение памяти
+	for (size_t i = 0; i < rows; ++i) 
+	{
+		delete[] arr1[i];
+		delete[] arr2[i];
+		delete[] sumMatrix[i];
+	}
+	delete[] arr1;
+	delete[] arr2;
+	delete[] sumMatrix;
+
+	return 0;
+}
