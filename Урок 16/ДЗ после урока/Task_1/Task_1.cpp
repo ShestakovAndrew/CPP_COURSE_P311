@@ -15,7 +15,7 @@ struct VideoStore
 // Функция для показа всех записей
 void ShowFilms(std::vector<VideoStore> const& films)
 {
-	for (const auto& film : films)
+	for (auto const& film : films)
 	{
 		std::cout << "Название фильма: " << film.filmName
 			<< ", Режиссер: " << film.director
