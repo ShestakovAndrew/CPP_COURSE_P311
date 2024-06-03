@@ -1,35 +1,13 @@
 ﻿#include <iostream>
+#include <ctime>
+
+#include "MatrixLibrary.h"
 
 //Написать функцию, добавляющую строку
 //двухмерному массиву в начало.
 
 const size_t MAX_ROWS = 2;
 const size_t MAX_COLS = 3;
-
-// Функция для заполнения матрицы случайными числами
-void FillMatrix(int** matrix, size_t rows, size_t cols)
-{
-	for (size_t i = 0; i < rows; ++i)
-	{
-		for (size_t j = 0; j < cols; ++j)
-		{
-			matrix[i][j] = rand() % 10; // Для примера, числа от 0 до 9
-		}
-	}
-}
-
-// Функция для печати матрицы
-void PrintMatrix(int** matrix, size_t rows, size_t cols)
-{
-	for (size_t i = 0; i < rows; ++i)
-	{
-		for (size_t j = 0; j < cols; ++j)
-		{
-			std::cout << matrix[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
-}
 
 // Функция добавления строки в начало матрицы
 size_t AddRowToFront(int**& matrix, size_t rows, size_t cols, const int* newRowValues)
@@ -70,36 +48,27 @@ size_t AddRowToFront(int**& matrix, size_t rows, size_t cols, const int* newRowV
 int main() 
 {
 	setlocale(LC_ALL, "rus");
-	srand(static_cast<unsigned int>(time(NULL)));
+	srand((unsigned int)time(0));
 
-	// Выделение памяти под матрицу
-	int** arr = new int* [MAX_ROWS];
-	for (size_t i = 0; i < MAX_ROWS; ++i)
-	{
-		arr[i] = new int[MAX_COLS];
-	}
-
-	// Заполнение матрицы
-	FillMatrix(arr, MAX_ROWS, MAX_COLS);
+	int** matrix = CreateAndFillMatrix(MAX_ROWS, MAX_COLS);
 
 	std::cout << "Исходная матрица: " << std::endl;
-	PrintMatrix(arr, MAX_ROWS, MAX_COLS);
+	PrintMatrix(matrix, MAX_ROWS, MAX_COLS);
 
 	// Значения для новой строки
 	int newRowValues[MAX_COLS] = { 1, 1, 1 };
 
-	// Добавляем новую строку в начало массива
-	size_t newRows = AddRowToFront(arr, MAX_ROWS, MAX_COLS, newRowValues);
+	size_t newRows = AddRowToFront(matrix, MAX_ROWS, MAX_COLS, newRowValues);
 
-	std::cout << "Массив после добавления строки в начало: " << std::endl;
-	PrintMatrix(arr, newRows, MAX_COLS);
+	std::cout << "Матрица после добавления строки в начало: " << std::endl;
+	PrintMatrix(matrix, newRows, MAX_COLS);
 
 	// Освобождение памяти
-	for (int i = 0; i < newRows; ++i)
+	for (size_t i = 0; i < newRows; ++i)
 	{
-		delete[] arr[i];
+		delete[] matrix[i];
 	}
-	delete[] arr;
+	delete[] matrix;
 
 	return 0;
 }

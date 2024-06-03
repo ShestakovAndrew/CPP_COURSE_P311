@@ -46,8 +46,16 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task_5", "Урок 15\Задания для самостоятельной работы\Task_5\Task_5.vcxproj", "{8CFE8F35-3B7B-4529-AC98-C89840CD9842}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task_6", "Урок 15\Задания для самостоятельной работы\Task_6\Task_6.vcxproj", "{380FCA79-BBFE-420A-B246-1FF126B261FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DE429BF0-4542-4E86-B326-36255F29D4FE} = {DE429BF0-4542-4E86-B326-36255F29D4FE}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task_7", "Урок 15\Задания для самостоятельной работы\Task_7\Task_7.vcxproj", "{A4968A2B-2C27-495B-91D9-F0135B68CF78}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DE429BF0-4542-4E86-B326-36255F29D4FE} = {DE429BF0-4542-4E86-B326-36255F29D4FE}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatrixLibrary", "Урок 15\Задания для самостоятельной работы\MatrixLibrary\MatrixLibrary.vcxproj", "{DE429BF0-4542-4E86-B326-36255F29D4FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -201,6 +209,14 @@ Global
 		{A4968A2B-2C27-495B-91D9-F0135B68CF78}.Release|x64.Build.0 = Release|x64
 		{A4968A2B-2C27-495B-91D9-F0135B68CF78}.Release|x86.ActiveCfg = Release|Win32
 		{A4968A2B-2C27-495B-91D9-F0135B68CF78}.Release|x86.Build.0 = Release|Win32
+		{DE429BF0-4542-4E86-B326-36255F29D4FE}.Debug|x64.ActiveCfg = Debug|x64
+		{DE429BF0-4542-4E86-B326-36255F29D4FE}.Debug|x64.Build.0 = Debug|x64
+		{DE429BF0-4542-4E86-B326-36255F29D4FE}.Debug|x86.ActiveCfg = Debug|Win32
+		{DE429BF0-4542-4E86-B326-36255F29D4FE}.Debug|x86.Build.0 = Debug|Win32
+		{DE429BF0-4542-4E86-B326-36255F29D4FE}.Release|x64.ActiveCfg = Release|x64
+		{DE429BF0-4542-4E86-B326-36255F29D4FE}.Release|x64.Build.0 = Release|x64
+		{DE429BF0-4542-4E86-B326-36255F29D4FE}.Release|x86.ActiveCfg = Release|Win32
+		{DE429BF0-4542-4E86-B326-36255F29D4FE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -227,6 +243,7 @@ Global
 		{8CFE8F35-3B7B-4529-AC98-C89840CD9842} = {5A8EBB49-61E4-4656-A30A-8C7AC8E6DBEF}
 		{380FCA79-BBFE-420A-B246-1FF126B261FC} = {5A8EBB49-61E4-4656-A30A-8C7AC8E6DBEF}
 		{A4968A2B-2C27-495B-91D9-F0135B68CF78} = {5A8EBB49-61E4-4656-A30A-8C7AC8E6DBEF}
+		{DE429BF0-4542-4E86-B326-36255F29D4FE} = {5A8EBB49-61E4-4656-A30A-8C7AC8E6DBEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {17593C27-7398-48AD-851D-E290D95F4C0E}

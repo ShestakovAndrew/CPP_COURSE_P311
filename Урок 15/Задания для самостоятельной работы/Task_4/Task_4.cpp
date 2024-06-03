@@ -1,36 +1,13 @@
 ﻿#include <iostream>
 #include <ctime>
 
+#include "MatrixLibrary.h"
+
 //Написать функцию, удаляющую строку двухмерного массива по указанному номеру.
 
 const size_t MAX_ROWS = 5;
 const size_t MAX_COLS = 3;
 const size_t DELETE_ROW_POSITION = 3;
-
-// Функция для заполнения матрицы случайными числами
-void FillMatrix(int** matrix, size_t rows, size_t cols)
-{
-	for (size_t i = 0; i < rows; ++i)
-	{
-		for (size_t j = 0; j < cols; ++j)
-		{
-			matrix[i][j] = rand() % 10;
-		}
-	}
-}
-
-// Функция для печати матрицы
-void PrintMatrix(int** matrix, size_t rows, size_t cols)
-{
-	for (size_t i = 0; i < rows; ++i)
-	{
-		for (size_t j = 0; j < cols; ++j)
-		{
-			std::cout << matrix[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
-}
 
 // Функция добавления строки в двумерный массив на заданную позицию
 size_t RemoveRowToPosition(
@@ -81,17 +58,9 @@ size_t RemoveRowToPosition(
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	srand(static_cast<unsigned int>(time(NULL)));
+	srand((unsigned int)time(0));
 
-	// Выделение памяти
-	int** matrix = new int* [MAX_ROWS];
-	for (size_t i = 0; i < MAX_ROWS; ++i)
-	{
-		matrix[i] = new int[MAX_COLS];
-	}
-
-	// Заполнение матрицы
-	FillMatrix(matrix, MAX_ROWS, MAX_COLS);
+	int** matrix = CreateAndFillMatrix(MAX_ROWS, MAX_COLS);
 
 	std::cout << "Исходная матрица: " << std::endl;
 	PrintMatrix(matrix, MAX_ROWS, MAX_COLS);

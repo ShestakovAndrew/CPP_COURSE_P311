@@ -1,20 +1,7 @@
 ﻿#include <iostream>
 #include <ctime>
 
-// Функция для создания и заполнения двумерного массива случайными числами
-int** CreateAndFillMatrix(size_t rows, size_t cols)
-{
-	int** arr = new int* [rows];
-	for (size_t i = 0; i < rows; ++i)
-	{
-		arr[i] = new int[cols];
-		for (size_t j = 0; j < cols; ++j)
-		{
-			arr[i][j] = rand() % 10;
-		}
-	}
-	return arr;
-}
+#include "MatrixLibrary.h"
 
 // Функция умножения двух матриц
 int** MultiplyMatrices(int** A, int** B, size_t M, size_t N, size_t K)
@@ -39,19 +26,6 @@ int** MultiplyMatrices(int** A, int** B, size_t M, size_t N, size_t K)
 	}
 
 	return C;
-}
-
-// Функция для печати матрицы
-void PrintMatrix(int** matrix, size_t rows, size_t cols)
-{
-	for (size_t i = 0; i < rows; ++i)
-	{
-		for (size_t j = 0; j < cols; ++j)
-		{
-			std::cout << matrix[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
 }
 
 int main() 
@@ -79,7 +53,7 @@ int main()
 	PrintMatrix(C, M, K);
 
 	// Освобождение памяти
-	for (int i = 0; i < M; ++i) 
+	for (size_t i = 0; i < M; ++i) 
 	{
 		delete[] A[i];
 		delete[] C[i];
@@ -87,7 +61,7 @@ int main()
 	delete[] A;
 	delete[] C;
 
-	for (int i = 0; i < N; ++i) 
+	for (size_t i = 0; i < N; ++i)
 	{
 		delete[] B[i];
 	}
