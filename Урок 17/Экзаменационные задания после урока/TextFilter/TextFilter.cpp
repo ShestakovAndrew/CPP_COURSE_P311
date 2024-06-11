@@ -70,7 +70,7 @@ int main()
 	{
 		if (filtersActive[i]) 
 		{
-			filterText(text, filters[i]); // true для удаления символов
+			FilterText(text, filters[i]); // true для удаления символов
 		}
 	}
 

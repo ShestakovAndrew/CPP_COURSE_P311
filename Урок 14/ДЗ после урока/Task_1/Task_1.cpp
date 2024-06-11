@@ -65,8 +65,8 @@ int main()
 		for (int el : row)
 		{
 			if (std::find(common_ABC.begin(), common_ABC.end(), el) == common_ABC.end() &&
-				element_in_matrix(B, el) &&
-				element_in_matrix(C, el))
+				IsElementInMatrix(B, el) &&
+				IsElementInMatrix(C, el))
 			{
 				common_ABC.push_back(el);
 			}

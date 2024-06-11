@@ -22,80 +22,80 @@ int myF3()
 	return a + 5;
 }
 
-auto checkDiscount(int prodID)
-{
-	if (prodID == 1) ы
-	{
-		return 10; // Как поправить ошибку?
-	}
-	else
-	{
-		return 20.5;
-	}
-}
+//auto checkDiscount(int prodID)
+//{
+//	if (prodID == 1)
+//	{
+//		return 10; // Как поправить ошибку?
+//	}
+//	else
+//	{
+//		return 20.5;
+//	}
+//}
 
 int main()
 {
-	double myVar1;
-	myVar1 = 4.2;
+	//double myVar1;
+	//myVar1 = 4.2;
 
-	double myVar2 = 4.2;
-	auto myVar3 = 4.2;
-	auto myExpr = 2 + 5;
+	//double myVar2 = 4.2;
+	//auto myVar3 = 4.2;
+	//auto myExpr = 2 + 5;
 
-	auto ptr = &myVar3;
+	//auto ptr = &myVar3;
 
-	auto min1 = minF1();
-	std::cout << min1 << std::endl;
+	//auto min1 = minF1();
+	//std::cout << min1 << std::endl;
 
-	auto min2 = minF2();
-	std::cout << min2 << std::endl;
+	//auto min2 = minF2();
+	//std::cout << min2 << std::endl;
 
-	//---------------------------------------
-	
-	int x = 1.2;
-	decltype(x) j;
-
-
-	int x = 1.2;
-	auto j = x;
+	////---------------------------------------
+	//
+	//int x = 1.2;
+	//decltype(x) j;
 
 
-	auto a1 = 0; // int
-	decltype (a1) a2 = a1; // auto a2=a1;
+	//int x = 1.2;
+	//auto j = x;
 
 
-	typedef decltype (a1) АTYPE; // АTYPE = int
-	typedef auto АTYPE = a1; // ошибка
-	using АTYPE = int; // аналог
-	АTYPE а3 = 5;
+	//auto a1 = 0; // int
+	//decltype (a1) a2 = a1; // auto a2=a1;
 
 
-	int y = 10;
-	int& r = y;
-	auto x = r;
+	//typedef decltype (a1) АTYPE; // АTYPE = int
+	//typedef auto АTYPE = a1; // ошибка
+	//using АTYPE = int; // аналог
+	//АTYPE а3 = 5;
 
 
-	int y = 10;
-	const int& r = y;
-	auto x = r;
+	//int y = 10;
+	//int& r = y;
+	//auto x = r;
 
 
-	int y = 10;
-	int x = 5;
-	int& r = y;
-	decltype(r) var = x;
-	var = 12;
-	std::cout << x;
+	//int y = 10;
+	//const int& r = y;
+	//auto x = r;
 
 
-	int x = 5;
-	decltype(x) j = x + 5;
-	std::cout << j;
+	//int y = 10;
+	//int x = 5;
+	//int& r = y;
+	//decltype(r) var = x;
+	//var = 12;
+	//std::cout << x;
 
 
-	decltype(myF3()) varF = 3;
-	std::cout << varF;
+	//int x = 5;
+	//decltype(x) j = x + 5;
+	//std::cout << j;
+
+
+	//decltype(myF3()) varF = 3;
+	//std::cout << varF;
 
 	return 0;
 }
