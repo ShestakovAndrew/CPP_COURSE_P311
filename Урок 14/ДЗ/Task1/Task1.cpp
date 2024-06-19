@@ -1,23 +1,28 @@
 ﻿#include <iostream>
-#include <string>
+#include <cstring>
 
-std::string RemoveChar(std::string str, size_t index)
+void RemoveChar(char* str, size_t index) 
 {
-	if (index >= 0 && index < str.length()) 
+	if (index >= 0 && index < strlen(str)) 
 	{
-		str.erase(index, 1); // Удаляем символ с заданным индексом
+		// Сдвигаем символы после удаляемого на одну позицию влево
+		for (size_t i = index; str[i] != '\0'; i++) 
+		{
+			str[i] = str[i + 1];
+		}
 	}
-	return str;
 }
 
 int main() 
 {
-	std::string myString = "Hello, world!";
+	setlocale(LC_ALL, "rus");
+
+	char myString[] = "Hello, world!";
 	size_t charIndex = 7;
 
 	std::cout << "Исходная строка: " << myString << std::endl;
 
-	myString = RemoveChar(myString, charIndex);
+	RemoveChar(myString, charIndex);
 
 	std::cout << "Строка после удаления: " << myString << std::endl;
 
