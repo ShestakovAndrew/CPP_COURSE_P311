@@ -13,11 +13,12 @@ int main()
 	}
 	else
 	{
-		while (!feof(in)) 
+		while (!feof(in)) //Для контроля достижения конца файла.
 		{
 			fscanf_s(in, "%f", &a);
 			cout << a << " ";
 		}
 	}
+
 	return 0;
 }

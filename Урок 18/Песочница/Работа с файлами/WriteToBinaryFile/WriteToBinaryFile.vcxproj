@@ -24,6 +24,7 @@
     <ProjectGuid>{aef2e522-af0e-4b00-820d-6b2d0e6998ee}</ProjectGuid>
     <RootNamespace>WriteToBinaryFile</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>7. WriteToBinaryFile</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

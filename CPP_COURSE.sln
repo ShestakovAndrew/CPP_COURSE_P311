@@ -163,13 +163,19 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1. WriteFile", "Урок 18
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2. WriteArrToFile", "Урок 18\Песочница\Работа с файлами\SaveToFile\SaveToFile.vcxproj", "{EF2B0921-0974-4437-9FF5-939E699D7BF1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadFile", "Урок 18\Песочница\Работа с файлами\ReadFile\ReadFile.vcxproj", "{F1D5E2BD-634E-43A4-B4E9-C35C39A41F2D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3. ReadFile", "Урок 18\Песочница\Работа с файлами\ReadFile\ReadFile.vcxproj", "{F1D5E2BD-634E-43A4-B4E9-C35C39A41F2D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadFileToStruct", "Урок 18\Песочница\Работа с файлами\ReadFileToStruct\ReadFileToStruct.vcxproj", "{341A15B7-7A13-4E2D-A71D-DAFA8A7BA1BE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4. ReadFileToStruct", "Урок 18\Песочница\Работа с файлами\ReadFileToStruct\ReadFileToStruct.vcxproj", "{341A15B7-7A13-4E2D-A71D-DAFA8A7BA1BE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadTextFromFile", "Урок 18\Песочница\Работа с файлами\ReadTextFromFile\ReadTextFromFile.vcxproj", "{254400BA-2A5A-4021-9D98-747A77C1316B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5. ReadTextFromFile", "Урок 18\Песочница\Работа с файлами\ReadTextFromFile\ReadTextFromFile.vcxproj", "{254400BA-2A5A-4021-9D98-747A77C1316B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WriteToBinaryFile", "Урок 18\Песочница\Работа с файлами\WriteToBinaryFile\WriteToBinaryFile.vcxproj", "{AEF2E522-AF0E-4B00-820D-6B2D0E6998EE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7. WriteToBinaryFile", "Урок 18\Песочница\Работа с файлами\WriteToBinaryFile\WriteToBinaryFile.vcxproj", "{AEF2E522-AF0E-4B00-820D-6B2D0E6998EE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "6. ReadFileByStr", "Урок 18\Песочница\Работа с файлами\ReadFileByStr\ReadFileByStr.vcxproj", "{C96685D1-0599-436A-82B6-3AB58552E3BE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "8. WriteAndReadBinFile", "Урок 18\Песочница\Работа с файлами\WriteAndReadBinFile\WriteAndReadBinFile.vcxproj", "{8062E610-CE7B-4744-8259-A9571B63E8A6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "9. SwapMinMaxInBinFile", "Урок 18\Песочница\Работа с файлами\SwapMinMaxInBinFile\SwapMinMaxInBinFile.vcxproj", "{7808D8E0-E8ED-48B4-BC44-EE2AC7BA2E4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -651,6 +657,30 @@ Global
 		{AEF2E522-AF0E-4B00-820D-6B2D0E6998EE}.Release|x64.Build.0 = Release|x64
 		{AEF2E522-AF0E-4B00-820D-6B2D0E6998EE}.Release|x86.ActiveCfg = Release|Win32
 		{AEF2E522-AF0E-4B00-820D-6B2D0E6998EE}.Release|x86.Build.0 = Release|Win32
+		{C96685D1-0599-436A-82B6-3AB58552E3BE}.Debug|x64.ActiveCfg = Debug|x64
+		{C96685D1-0599-436A-82B6-3AB58552E3BE}.Debug|x64.Build.0 = Debug|x64
+		{C96685D1-0599-436A-82B6-3AB58552E3BE}.Debug|x86.ActiveCfg = Debug|Win32
+		{C96685D1-0599-436A-82B6-3AB58552E3BE}.Debug|x86.Build.0 = Debug|Win32
+		{C96685D1-0599-436A-82B6-3AB58552E3BE}.Release|x64.ActiveCfg = Release|x64
+		{C96685D1-0599-436A-82B6-3AB58552E3BE}.Release|x64.Build.0 = Release|x64
+		{C96685D1-0599-436A-82B6-3AB58552E3BE}.Release|x86.ActiveCfg = Release|Win32
+		{C96685D1-0599-436A-82B6-3AB58552E3BE}.Release|x86.Build.0 = Release|Win32
+		{8062E610-CE7B-4744-8259-A9571B63E8A6}.Debug|x64.ActiveCfg = Debug|x64
+		{8062E610-CE7B-4744-8259-A9571B63E8A6}.Debug|x64.Build.0 = Debug|x64
+		{8062E610-CE7B-4744-8259-A9571B63E8A6}.Debug|x86.ActiveCfg = Debug|Win32
+		{8062E610-CE7B-4744-8259-A9571B63E8A6}.Debug|x86.Build.0 = Debug|Win32
+		{8062E610-CE7B-4744-8259-A9571B63E8A6}.Release|x64.ActiveCfg = Release|x64
+		{8062E610-CE7B-4744-8259-A9571B63E8A6}.Release|x64.Build.0 = Release|x64
+		{8062E610-CE7B-4744-8259-A9571B63E8A6}.Release|x86.ActiveCfg = Release|Win32
+		{8062E610-CE7B-4744-8259-A9571B63E8A6}.Release|x86.Build.0 = Release|Win32
+		{7808D8E0-E8ED-48B4-BC44-EE2AC7BA2E4E}.Debug|x64.ActiveCfg = Debug|x64
+		{7808D8E0-E8ED-48B4-BC44-EE2AC7BA2E4E}.Debug|x64.Build.0 = Debug|x64
+		{7808D8E0-E8ED-48B4-BC44-EE2AC7BA2E4E}.Debug|x86.ActiveCfg = Debug|Win32
+		{7808D8E0-E8ED-48B4-BC44-EE2AC7BA2E4E}.Debug|x86.Build.0 = Debug|Win32
+		{7808D8E0-E8ED-48B4-BC44-EE2AC7BA2E4E}.Release|x64.ActiveCfg = Release|x64
+		{7808D8E0-E8ED-48B4-BC44-EE2AC7BA2E4E}.Release|x64.Build.0 = Release|x64
+		{7808D8E0-E8ED-48B4-BC44-EE2AC7BA2E4E}.Release|x86.ActiveCfg = Release|Win32
+		{7808D8E0-E8ED-48B4-BC44-EE2AC7BA2E4E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -732,6 +762,9 @@ Global
 		{341A15B7-7A13-4E2D-A71D-DAFA8A7BA1BE} = {863A8BE2-1892-4BAC-8CD2-1AF7A3FA3911}
 		{254400BA-2A5A-4021-9D98-747A77C1316B} = {863A8BE2-1892-4BAC-8CD2-1AF7A3FA3911}
 		{AEF2E522-AF0E-4B00-820D-6B2D0E6998EE} = {863A8BE2-1892-4BAC-8CD2-1AF7A3FA3911}
+		{C96685D1-0599-436A-82B6-3AB58552E3BE} = {863A8BE2-1892-4BAC-8CD2-1AF7A3FA3911}
+		{8062E610-CE7B-4744-8259-A9571B63E8A6} = {863A8BE2-1892-4BAC-8CD2-1AF7A3FA3911}
+		{7808D8E0-E8ED-48B4-BC44-EE2AC7BA2E4E} = {863A8BE2-1892-4BAC-8CD2-1AF7A3FA3911}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {17593C27-7398-48AD-851D-E290D95F4C0E}

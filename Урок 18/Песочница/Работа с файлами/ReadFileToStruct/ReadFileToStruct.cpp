@@ -29,7 +29,7 @@ int main()
 			
 			cout << myshop[i].title << " "
 				<< myshop[i].qty << " "
-				<< myshop[i].price << "\n";;
+				<< myshop[i].price << "\n";
 			i++;
 		}
 	}

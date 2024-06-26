@@ -10,7 +10,6 @@ int main()
 	if (fopen_s(&out, "b_data.dat", "wb") != NULL)
 	{
 		cout << "The file cannot be opened";
-
 	}
 	else
 	{
