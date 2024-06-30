@@ -6,9 +6,14 @@ int main()
 {
 	const int n = 10;
 	int arr[n], a;
+
 	FILE* f;
+
 	if (fopen_s(&f, "b_data.dat", "wb") != NULL)
+	{
 		cout << "The file cannot be opened";
+
+	}
 	else
 	{
 		for (int i = 0; i < n; i++)
@@ -18,8 +23,13 @@ int main()
 		}
 		fclose(f);
 	}
+
+
 	if (fopen_s(&f, "b_data.dat", "rb") != NULL)
+	{
 		cout << "The file cannot be opened";
+
+	}
 	else
 	{
 		for (int i = 0; i < n; i++)
@@ -29,8 +39,12 @@ int main()
 		cout << a << "\n";
 		fclose(f);
 	}
+
+
 	if (fopen_s(&f, "b_data.dat", "rb") != NULL)
+	{
 		cout << "The file cannot be opened";
+	}
 	else
 	{
 		fread(&a, sizeof(int), 1, f);
